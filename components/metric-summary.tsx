@@ -38,10 +38,10 @@ export function MetricSummary() {
           <div key={metric.title} className="rounded-3xl bg-white p-6 shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-400">{metric.title}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-brand/70">{metric.title}</p>
                 <p className="mt-2 text-2xl font-semibold text-slate-900">{metric.value}</p>
               </div>
-              <div className="rounded-full bg-brand/10 p-3 text-brand">
+              <div className="rounded-full bg-accent/10 p-3 text-accent">
                 <Icon className="h-6 w-6" />
               </div>
             </div>

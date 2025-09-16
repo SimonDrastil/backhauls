@@ -41,8 +41,8 @@ export function BackhaulsMap({ listings, selectedId, onSelect }: BackhaulsMapPro
               <Geography
                 key={geo.rsmKey}
                 geography={geo}
-                fill="#f8fafc"
-                stroke="#e2e8f0"
+                fill="#eef2fb"
+                stroke="#d4ddf0"
                 strokeWidth={0.5}
               />
             ))
@@ -63,8 +63,8 @@ export function BackhaulsMap({ listings, selectedId, onSelect }: BackhaulsMapPro
               >
                 <circle
                   r={isActive ? 12 : 9}
-                  className={cn('cursor-pointer fill-brand stroke-white stroke-[3px]', {
-                    'fill-brand-dark': isActive
+                  className={cn('cursor-pointer fill-accent stroke-white stroke-[3px]', {
+                    'fill-accent-dark': isActive
                   })}
                 />
                 <text

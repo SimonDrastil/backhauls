@@ -30,16 +30,16 @@ export function ListingTable({ listings, onSelect, selectedId }: ListingTablePro
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+      <div className="flex items-center justify-between border-b border-brand/10 px-6 py-4">
         <div>
           <h2 className="text-lg font-semibold text-slate-900">Live backhaul marketplace</h2>
           <p className="text-xs text-slate-500">Filter by mode, lane, pricing model or subscription tier.</p>
         </div>
         <div className="flex gap-2">
-          <button className="rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-600 transition hover:border-brand hover:text-brand">
+          <button className="rounded-full border border-brand/30 px-4 py-2 text-xs font-semibold text-brand transition hover:border-brand hover:text-brand-dark">
             Filters
           </button>
-          <button className="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition hover:bg-brand">
+          <button className="rounded-full bg-brand px-4 py-2 text-xs font-semibold text-white transition hover:bg-brand-dark">
             Save search
           </button>
         </div>
@@ -48,11 +48,11 @@ export function ListingTable({ listings, onSelect, selectedId }: ListingTablePro
         <table className="min-w-full divide-y divide-slate-100 text-sm">
           <thead className="sticky top-0 bg-white">
             <tr className="text-left">
-              <th className="px-6 py-3 font-semibold text-slate-500">Listing</th>
-              <th className="px-6 py-3 font-semibold text-slate-500">Carrier</th>
-              <th className="px-6 py-3 font-semibold text-slate-500">Pick-up</th>
-              <th className="px-6 py-3 font-semibold text-slate-500">Drop-off</th>
-              <th className="px-6 py-3 font-semibold text-slate-500">Price</th>
+              <th className="px-6 py-3 font-semibold text-brand/70">Listing</th>
+              <th className="px-6 py-3 font-semibold text-brand/70">Carrier</th>
+              <th className="px-6 py-3 font-semibold text-brand/70">Pick-up</th>
+              <th className="px-6 py-3 font-semibold text-brand/70">Drop-off</th>
+              <th className="px-6 py-3 font-semibold text-brand/70">Price</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
@@ -62,8 +62,8 @@ export function ListingTable({ listings, onSelect, selectedId }: ListingTablePro
                 <tr
                   key={row.id}
                   className={
-                    'cursor-pointer transition hover:bg-slate-50' +
-                    (isSelected ? ' bg-slate-50' : '')
+                    'cursor-pointer transition hover:bg-brand/5' +
+                    (isSelected ? ' bg-brand/5' : '')
                   }
                   onClick={() => onSelect(row)}
                 >

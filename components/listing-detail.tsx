@@ -38,9 +38,9 @@ export function ListingDetail({ listing }: ListingDetailProps) {
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Featured Backhaul</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-brand/70">Featured Backhaul</p>
           <h2 className="mt-2 text-3xl font-semibold text-slate-900">
-            {listing.origin} <ArrowRight className="inline h-6 w-6 text-brand" /> {listing.destination}
+            {listing.origin} <ArrowRight className="inline h-6 w-6 text-accent" /> {listing.destination}
           </h2>
           <p className="mt-2 text-sm text-slate-500">{listing.distance} miles • {listing.capacity}</p>
         </div>
@@ -72,7 +72,7 @@ export function ListingDetail({ listing }: ListingDetailProps) {
         <button className="flex-1 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-brand-dark">
           Instant book & issue docs
         </button>
-        <button className="flex-1 rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-brand hover:text-brand">
+        <button className="flex-1 rounded-full border border-brand/30 px-6 py-3 text-sm font-semibold text-brand transition hover:border-brand hover:text-brand-dark">
           Chat with carrier
         </button>
       </div>

@@ -31,11 +31,12 @@ body {
 .sidebar h1 {
   font-size: 28px;
   margin: 0;
+  color: #0b3c8a;
 }
 
 .subtitle {
   margin: 0;
-  color: #475569;
+  color: #2fb24c;
   font-size: 14px;
 }
 
@@ -63,7 +64,7 @@ body {
   font-size: 32px;
   font-weight: 700;
   margin: 12px 0;
-  color: #ef4444;
+  color: #0b3c8a;
 }
 
 .card .meta {
@@ -93,11 +94,11 @@ body {
 }
 
 .pin {
-  fill: #ef4444;
+  fill: #2fb24c;
   stroke: white;
   stroke-width: 3;
   cursor: pointer;
-  filter: drop-shadow(0 10px 20px rgba(239, 68, 68, 0.5));
+  filter: drop-shadow(0 10px 20px rgba(47, 178, 76, 0.4));
 }
 
 .pin-label {

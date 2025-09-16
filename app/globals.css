@@ -8,7 +8,12 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  background: radial-gradient(
+      140% 140% at 95% 10%,
+      rgba(47, 178, 76, 0.08) 0%,
+      rgba(11, 60, 138, 0.12) 40%,
+      #ffffff 100%
+    );
   color: #0f172a;
   min-height: 100vh;
 }
