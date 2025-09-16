@@ -6,8 +6,8 @@ Use the following script to demo the Backhauls MVP to stakeholders. The flow hig
 
 1. Navigate to `http://localhost:3000`.
 2. Point out the hero dashboard: live revenue metrics, subscription badge and quick navigation.
-3. Showcase the Zillow-style interactive US map populated with red backhaul beacons.
-4. Click on a marker (e.g. Seattle → Los Angeles) to open the detailed booking drawer.
+3. Showcase the Zillow-style interactive US map populated with Backhauls blue + green price tags across 20 sample lanes.
+4. Click on a marker (e.g. Seattle → Los Angeles) to open the detailed booking drawer with status and mode badges.
 5. Discuss the instant pricing, capacity, ETA cards and booking CTA.
 
 ## 2. Exploring listings & filtering (2 minutes)

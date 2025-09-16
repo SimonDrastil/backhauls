@@ -8,14 +8,16 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(
-      140% 140% at 95% 10%,
-      rgba(47, 178, 76, 0.08) 0%,
-      rgba(11, 60, 138, 0.12) 40%,
-      #ffffff 100%
-    );
+  background:
+    radial-gradient(120% 120% at 80% 0%, rgba(47, 178, 76, 0.18) 0%, rgba(11, 60, 138, 0) 60%),
+    linear-gradient(160deg, #021d44 0%, #0b3c8a 45%, #0a2f6c 70%, #0f172a 100%);
   color: #0f172a;
   min-height: 100vh;
+}
+
+::selection {
+  background: rgba(47, 178, 76, 0.35);
+  color: #f8fafc;
 }
 
 .map-container {

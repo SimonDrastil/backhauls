@@ -60,7 +60,7 @@ This launches the Next.js app alongside PostgreSQL and Redis services.
 
 ## Vanilla map demo
 
-A static demo located at [`vanilla-demo/`](vanilla-demo/) mirrors the Zillow-like map experience without any build tooling. Open `vanilla-demo/index.html` in your browser to view the interactive pins powered by plain JavaScript.
+A static demo located at [`vanilla-demo/`](vanilla-demo/) mirrors the Zillow-like map experience without any build tooling. Open `vanilla-demo/index.html` in your browser to view the branded price tags, 20 sample lanes, and booking drawer powered by plain JavaScript.
 
 ## License
 
