@@ -1,0 +1,119 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  padding: 48px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  background: white;
+  border-radius: 32px;
+  padding: 32px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.card {
+  border-radius: 24px;
+  padding: 24px;
+  background: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.2);
+  min-height: 160px;
+}
+
+.card.empty {
+  display: flex;
+  align-items: center;
+  color: #64748b;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.card .price {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 12px 0;
+  color: #ef4444;
+}
+
+.card .meta {
+  font-size: 12px;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footnote {
+  margin-top: auto;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.map-wrapper {
+  border-radius: 32px;
+  background: white;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+  overflow: hidden;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.pin {
+  fill: #ef4444;
+  stroke: white;
+  stroke-width: 3;
+  cursor: pointer;
+  filter: drop-shadow(0 10px 20px rgba(239, 68, 68, 0.5));
+}
+
+.pin-label {
+  fill: #475569;
+  font-size: 10px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+@media (max-width: 960px) {
+  .page {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+}

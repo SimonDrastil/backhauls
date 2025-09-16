@@ -1,0 +1,151 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CARRIER
+  SHIPPER
+  ADMIN
+}
+
+enum ListingStatus {
+  DRAFT
+  PUBLISHED
+  BOOKED
+  COMPLETED
+  CANCELLED
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  IN_TRANSIT
+  COMPLETED
+  CANCELLED
+  DISPUTED
+}
+
+enum SubscriptionPlan {
+  BASIC
+  PREMIUM
+  ENTERPRISE
+}
+
+enum PayoutStatus {
+  PENDING
+  IN_PROGRESS
+  PAID
+  FAILED
+}
+
+enum DisputeStatus {
+  OPEN
+  UNDER_REVIEW
+  RESOLVED
+  REFUNDED
+}
+
+model User {
+  id          String      @id @default(cuid())
+  email       String      @unique
+  name        String?
+  role        UserRole
+  organization String?
+  plan        SubscriptionPlan? @default(BASIC)
+  listings    Listing[]   @relation("UserListings")
+  orders      Order[]     @relation("UserOrders")
+  messages    Message[]
+  subscriptions Subscription[]
+  payouts     Payout[]
+  flags       Flag[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Listing {
+  id           String        @id @default(cuid())
+  carrier      User          @relation("UserListings", fields: [carrierId], references: [id])
+  carrierId    String
+  origin       String
+  destination  String
+  equipment    String
+  capacity     String
+  availableAt  DateTime
+  expiresAt    DateTime
+  price        Decimal       @db.Decimal(10,2)
+  status       ListingStatus @default(PUBLISHED)
+  vehicleType  String
+  distance     Int
+  orders       Order[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  listing     Listing     @relation(fields: [listingId], references: [id])
+  listingId   String
+  shipper     User        @relation("UserOrders", fields: [shipperId], references: [id])
+  shipperId   String
+  carrierId   String
+  status      OrderStatus @default(PENDING)
+  total       Decimal     @db.Decimal(10,2)
+  paymentId   String?
+  bookingType String      @default("INSTANT")
+  messages    Message[]
+  payout      Payout?
+  dispute     Flag?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  order     Order    @relation(fields: [orderId], references: [id])
+  orderId   String
+  sender    User     @relation(fields: [senderId], references: [id])
+  senderId  String
+  body      String
+  attachments String[]
+  createdAt DateTime @default(now())
+}
+
+model Subscription {
+  id        String            @id @default(cuid())
+  user      User              @relation(fields: [userId], references: [id])
+  userId    String
+  plan      SubscriptionPlan
+  status    String
+  periodEnd DateTime
+  stripeId  String?
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+}
+
+model Payout {
+  id        String      @id @default(cuid())
+  carrier   User        @relation(fields: [carrierId], references: [id])
+  carrierId String
+  amount    Decimal     @db.Decimal(10,2)
+  status    PayoutStatus @default(PENDING)
+  stripeId  String?
+  order     Order?
+  orderId   String?
+  createdAt DateTime    @default(now())
+}
+
+model Flag {
+  id              String       @id @default(cuid())
+  order           Order        @relation(fields: [orderId], references: [id])
+  orderId         String
+  reason          String
+  resolutionNotes String?
+  resolutionStatus DisputeStatus @default(OPEN)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
