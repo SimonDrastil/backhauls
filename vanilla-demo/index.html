@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backhauls Map Demo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="sidebar">
+        <h1>Backhauls marketplace</h1>
+        <p class="subtitle">Click a price tag to reveal lane pricing and capacity details.</p>
+        <div id="listing-card" class="card empty">
+          <p>Select a deadhead opportunity on the map to preview capacity.</p>
+        </div>
+        <div class="footnote">Powered by Stripe, Prisma, and real-time telematics.</div>
+      </section>
+      <section class="map-wrapper">
+        <svg id="map" aria-label="United States logistics heatmap"></svg>
+      </section>
+    </main>
+  </body>
+</html>
